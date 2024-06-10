@@ -733,11 +733,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: b0c51a70-4d9c-4d39-9d7f-0344cc5e53e4
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: DJDE
+  organizationId: unity_b38f4df433f4289f88a2
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

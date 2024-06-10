@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using System;
 
@@ -30,15 +31,22 @@ public static class s_MatchSettings
     };
 }
 
-// TODO: trocar para pegar essas informacoes de uma arquivo binario/JSON/Database
+[System.Serializable]
+public class GameAssetsData
+{
+    public Dictionary<Characters, string> CharactersPrefabs;
+    public Dictionary<Stages, string> StagesPrefabs;
+}
+
 public static class s_GameAssets
 {
+
     public static readonly Dictionary<Characters, string> CharactersPrefabs = new Dictionary<Characters, string>
     {
         { Characters.STANDARD, "Prefabs/Characters/StandardCharacter" }
     };
     public static readonly Dictionary<Stages, string> StagesPrefabs = new Dictionary<Stages, string>
     {
-        { Stages.CITY_STAGE, "Prefabs/Stages/CityStage" }
+        { Stages.CITY_STAGE, "Prefabs/Stages/MVP" }
     };
 }

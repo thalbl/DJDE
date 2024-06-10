@@ -22,7 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int currentPlayerId;
     [SerializeField] private List<Player> players;
 
-    void Awake()
+    [SerializeField] private GameObject Dice;
+
+    void Start()
     {
         InitPlayers();
     }
@@ -70,4 +72,6 @@ public class GameManager : MonoBehaviour
         this.currentPlayerId = i;
         this.players[i].StateMachine.SwitchState(this.players[i].StateMachine.Starting());
     }
+
+   
 }

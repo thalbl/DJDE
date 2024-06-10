@@ -1,0 +1,8 @@
+{
+  "CharactersPrefabs": {
+    "STANDARD": "Prefabs/Characters/StandardCharacter"
+  },
+  "StagesPrefabs": {
+    "CITY_STAGE": "Prefabs/Stages/MVP"
+  }
+}

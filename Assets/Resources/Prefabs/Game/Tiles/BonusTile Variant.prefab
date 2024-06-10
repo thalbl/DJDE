@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: gameTaskObj
       value: 
       objectReference: {fileID: 5524706472429068381, guid: 455e0457e29a39641a7bbca2a82b298b, type: 3}
+    - target: {fileID: 5706548619368665933, guid: 9ea1b1900f524b549a35a644b202f2d5, type: 3}
+      propertyPath: gameTaskDice
+      value: 
+      objectReference: {fileID: 5524706472429068381, guid: 65580a7e0e90db741b7a7e25233a3153, type: 3}
     - target: {fileID: 7662193719645865532, guid: 9ea1b1900f524b549a35a644b202f2d5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

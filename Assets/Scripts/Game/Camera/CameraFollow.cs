@@ -16,16 +16,21 @@ public class CameraFollow : MonoBehaviour
 
     public Vector3 Direction;
 
-    void Awake()
+    void Start()
     {
-        float x = Mathf.Sin(Phi * Mathf.Deg2Rad) * Mathf.Cos(Theta * Mathf.Deg2Rad);
-        float y = Mathf.Cos(Phi * Mathf.Deg2Rad);
-        float z = Mathf.Sin(Phi * Mathf.Deg2Rad) * Mathf.Sin(Theta * Mathf.Deg2Rad);
+        if(target != null) {
+            float x = Mathf.Sin(Phi * Mathf.Deg2Rad) * Mathf.Cos(Theta * Mathf.Deg2Rad);
+            float y = Mathf.Cos(Phi * Mathf.Deg2Rad);
+            float z = Mathf.Sin(Phi * Mathf.Deg2Rad) * Mathf.Sin(Theta * Mathf.Deg2Rad);
 
-        this.Direction = new Vector3(x, y, z);
+            this.Direction = new Vector3(x, y, z);
 
-        transform.position = this.target.position + this.Direction * Distance;
-        transform.LookAt(this.target);
+            transform.position = this.target.position + this.Direction * Distance;
+            transform.LookAt(this.target);
+        }
+        else {
+            Debug.LogError("Target not assigned to CameraFollow");
+        }
     }
 
     void LateUpdate()

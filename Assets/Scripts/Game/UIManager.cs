@@ -6,4 +6,6 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameManager;
     [SerializeField] private GameObject soundManager;
+
+        
 }
