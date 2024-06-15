@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-// TODO: Idealmente, gostariamos de ler todas as informacoes estaticas de um arquivo e carrega-las em tempo de execucao. Pode ser um arquivo binario, JSON, etc. Para o MVP do projeto, essa abordagem funciona.
 public static class Questions
 {
     public static readonly List<Question> Cards = new List<Question>()
