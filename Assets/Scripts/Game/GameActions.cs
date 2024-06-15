@@ -111,7 +111,7 @@ public class GameActions : MonoBehaviour {
     }
 
     private async Task MovePlayer(Player player) {
-        TriggerActivity(-1, -1);
+        TriggerActivity(1, -1);
         int nSteps;
         this.selectedDice = 1;
 
@@ -123,7 +123,11 @@ public class GameActions : MonoBehaviour {
         // First neighbouring tile
         Tile neighbourTile = currentTile.Neighbours.First();
 
+        
         await Task.Delay(2500);
+        Dialogue($"Andará {nSteps} casas!");
+        await Task.Delay(1000);
+        TriggerActivity(-1, -1);
         DestroyDiceObject(diceClone);
 
         while (nSteps > 0) {
@@ -186,14 +190,14 @@ public class GameActions : MonoBehaviour {
 
     void SelectNormalDice() {
         isDoubleDice = false;
-        Dialogue("Dado normal selecionado!");
+        Dialogue("Dado normal selecionado! Pressione \"E\" para continuar");
         Debug.Log("Dado normal selecionado");
         TriggerActivity(1, -1);
     }
 
     void SelectDoubleDice() {
         isDoubleDice = true;
-        Dialogue("Dado duplo selecionado!");
+        Dialogue("Dado duplo selecionado! Pressione \"E\" para continuar");
         Debug.Log("Dado em dobro selecionado");
         TriggerActivity(1, -1);
     }
