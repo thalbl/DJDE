@@ -34,7 +34,7 @@ public class UIBehaviour : MonoBehaviour
     public void TriggerActivity(int d, int o, int o1, int o2) {
         dialogue.SetActive(d == 0 ? dialogue.activeInHierarchy : d > 0);
         diceButtonsHUD.SetActive(o == 0 ? diceButtonsHUD.activeInHierarchy : o > 0);
-        normalDiceButton.SetActive(o == 0 ? diceButtonsHUD.activeInHierarchy : o > 0);
-        doubleDiceButton.SetActive(o == 0 ? diceButtonsHUD.activeInHierarchy : o > 0);
+        normalDiceButton.SetActive(o1 == 0 ? diceButtonsHUD.activeInHierarchy : o1 > 0);
+        doubleDiceButton.SetActive(o2 == 0 ? diceButtonsHUD.activeInHierarchy : o2 > 0);
     }
 }
