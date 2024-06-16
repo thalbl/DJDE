@@ -1,30 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 using System.Threading.Tasks;
 using System.Linq;
 using UnityEngine.UI;
-using Unity.VisualScripting.Antlr3.Runtime;
-using TMPro;
+
 
 public class GameActions : MonoBehaviour {
     private GameManager gameManager;
 
     [SerializeField]
     private int selectedDice;
-
     [SerializeField] private GameObject dice;
     private GameObject diceClone;
 
-    public GameObject diceButtonsHUD;
-    public GameObject dialogue;
-    public Text dialogueText;
     public GameObject normalDiceButton;
     public GameObject doubleDiceButton;
     [SerializeField]
     private bool isDoubleDice = false;
-    private string targetText = "";
+    [SerializeField] private UIBehaviour uiBehaviour;
 
     // TODO: Cheats / Remove
     [SerializeField] private int DICEROLL;
@@ -39,6 +31,7 @@ public class GameActions : MonoBehaviour {
         PlayerEvents.OnOpenMap += OpenMap;
         PlayerEvents.OnOpenPortfolio += OpenPortfolio;
         PlayerEvents.OnOpenInventory += OpenInventory;
+        uiBehaviour = Object.FindObjectOfType<UIBehaviour>();
     }
 
     void OnDisable() {
@@ -59,8 +52,8 @@ public class GameActions : MonoBehaviour {
         Vector3 dicePosition = new Vector3(0f, 3f, 0f);
         diceClone = Instantiate(dice, player.transform.position + dicePosition, Quaternion.identity);
 
-        TriggerActivity(1, 1);
-        Dialogue("Qual dado?");
+        uiBehaviour.TriggerActivity(1, 1);
+        uiBehaviour.Dialogue("Qual dado?");
         // Adiciona listeners aos botões para chamar os métodos apropriados quando clicados
         normalDiceButton.GetComponent<Button>().onClick.AddListener(SelectNormalDice);
         doubleDiceButton.GetComponent<Button>().onClick.AddListener(SelectDoubleDice);
@@ -111,7 +104,7 @@ public class GameActions : MonoBehaviour {
     }
 
     private async Task MovePlayer(Player player) {
-        TriggerActivity(1, -1);
+        uiBehaviour.TriggerActivity(1, -1);
         int nSteps;
         this.selectedDice = 1;
 
@@ -125,9 +118,9 @@ public class GameActions : MonoBehaviour {
 
         
         await Task.Delay(2500);
-        Dialogue($"Andará {nSteps} casas!");
+        uiBehaviour.Dialogue($"Andará {nSteps} casas!");
         await Task.Delay(1000);
-        TriggerActivity(-1, -1);
+        uiBehaviour.TriggerActivity(-1, -1);
         DestroyDiceObject(diceClone);
 
         while (nSteps > 0) {
@@ -190,35 +183,15 @@ public class GameActions : MonoBehaviour {
 
     void SelectNormalDice() {
         isDoubleDice = false;
-        Dialogue("Dado normal selecionado! Pressione \"E\" para continuar");
+        uiBehaviour.Dialogue("Dado normal selecionado! Pressione \"E\" para continuar");
         Debug.Log("Dado normal selecionado");
-        TriggerActivity(1, -1);
+        uiBehaviour.TriggerActivity(1, -1);
     }
 
     void SelectDoubleDice() {
         isDoubleDice = true;
-        Dialogue("Dado duplo selecionado! Pressione \"E\" para continuar");
+        uiBehaviour.Dialogue("Dado duplo selecionado! Pressione \"E\" para continuar");
         Debug.Log("Dado em dobro selecionado");
-        TriggerActivity(1, -1);
-    }
-
-    void TriggerActivity(int d, int o) {
-        dialogue.SetActive(d == 0 ? dialogue.activeInHierarchy : d > 0);
-        diceButtonsHUD.SetActive(o == 0 ? diceButtonsHUD.activeInHierarchy : o > 0);
-    }
-
-    void Dialogue(string targetText) {
-        if (dialogue != null) {
-            TextMeshProUGUI dialogText = dialogue.GetComponentInChildren<TextMeshProUGUI>();
-            if (dialogText != null) {
-                dialogText.text = targetText;
-            }
-            else {
-                Debug.LogWarning("O componente TextMeshProUGUI não foi encontrado como filho do GameObject.");
-            }
-        }
-        else {
-            Debug.LogWarning("O GameObject do tipo Image não foi atribuído.");
-        }
+        uiBehaviour.TriggerActivity(1, -1);
     }
 }
