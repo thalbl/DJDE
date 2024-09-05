@@ -10,10 +10,14 @@ public enum Controllers { NULL, HUMAN, CPU }
 
 public static class s_MatchSettings 
 {
-    public static int NumPlayers = 1;
+    public static int NumPlayers = 3;
     public static int Rounds = 20;
     public static bool Bonuses = false;
     public static bool RandomEvents = false;
+
+    public static int maxTurn;
+    public static int bonusMedals;
+    public static int halfwayThere;
     public static Stages SelectedStage = Stages.NULL;
     public static List<Characters> SelectedCharacters = new List<Characters> 
     { 

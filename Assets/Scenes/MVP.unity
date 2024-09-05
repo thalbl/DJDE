@@ -1275,7 +1275,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Dado simples
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1501,8 +1503,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceButtonsHUD: {fileID: 1335242337}
   dialogue: {fileID: 1290164291}
-  normalDiceButton: {fileID: 82007056}
-  doubleDiceButton: {fileID: 1513435435}
+  normalDiceButton: {fileID: 0}
+  doubleDiceButton: {fileID: 0}
 --- !u!1 &1034947571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3585560521842944214, guid: a32b559f66b297a43a6950c7788ba59a, type: 3}
@@ -1621,6 +1623,22 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 7689271856001297132, guid: fef50a890b27e0047841f8c3a9815c2d, type: 3}
+      propertyPath: p1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689271856001297132, guid: fef50a890b27e0047841f8c3a9815c2d, type: 3}
+      propertyPath: p2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689271856001297132, guid: fef50a890b27e0047841f8c3a9815c2d, type: 3}
+      propertyPath: p3
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689271856001297132, guid: fef50a890b27e0047841f8c3a9815c2d, type: 3}
+      propertyPath: p4
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689271856001297132, guid: fef50a890b27e0047841f8c3a9815c2d, type: 3}
       propertyPath: Dice
       value: 
       objectReference: {fileID: 1067086492}
@@ -1648,6 +1666,10 @@ PrefabInstance:
       propertyPath: startingTile
       value: 
       objectReference: {fileID: 1501241642}
+    - target: {fileID: 7689271856001297132, guid: fef50a890b27e0047841f8c3a9815c2d, type: 3}
+      propertyPath: players.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7689271856001297133, guid: fef50a890b27e0047841f8c3a9815c2d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2340,7 +2362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Dado 2x
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

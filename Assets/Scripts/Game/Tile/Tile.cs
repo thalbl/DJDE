@@ -10,6 +10,8 @@ public class Tile : MonoBehaviour
     [SerializeField] private bool isBlocked;
     [SerializeField] private bool isStopPoint;
     [SerializeField] private List<GameObject> neighboursObjs;
+    [Tooltip("This space's internal ID number.")]
+    public int id;
 
     // Getters and setters
     public List<Tile> Neighbours;
@@ -29,6 +31,6 @@ public class Tile : MonoBehaviour
     {
         this.Neighbours = new List<Tile>();
         foreach(GameObject tile in this.neighboursObjs)
-           this.Neighbours.Add(tile.GetComponent<Tile>());
+        this.Neighbours.Add(tile.GetComponent<Tile>());
     }
 }
